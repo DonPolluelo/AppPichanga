@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "260516884153",
+    "firebase_url": "https://pichanga-95bb1.firebaseio.com",
+    "project_id": "pichanga-95bb1",
+    "storage_bucket": "pichanga-95bb1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:260516884153:android:5b7a7b1074216159",
+        "android_client_info": {
+          "package_name": "com.pichangaexample.pichanga"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "260516884153-2omcqva1mq4bohhnkrfou7108s71n6pv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pichangaexample.pichanga",
+            "certificate_hash": "6e9d6ac9635fb0c2c83848e5300d1db27058eeb7"
+          }
+        },
+        {
+          "client_id": "260516884153-98e597cp5r6tvqsbcomsatok6475uogm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYRQsme2kY2NWKZgzmM10IRKok7p4pQVI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "260516884153-98e597cp5r6tvqsbcomsatok6475uogm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
