@@ -12,6 +12,8 @@ import android.support.v7.widget.Toolbar;
         private TabLayout tabLayout;
         private ViewPager viewpager;
 
+        public static final String user = "names";
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
