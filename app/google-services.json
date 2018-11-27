@@ -31,6 +31,14 @@
           }
         },
         {
+          "client_id": "260516884153-7pphnuoc7n2206qm8kl1pkhfhqf0ajp0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.pichangaexample.pichanga",
+            "certificate_hash": "57c71534570bc7ff8e63eff10d968c115c2fc19d"
+          }
+        },
+        {
           "client_id": "260516884153-98e597cp5r6tvqsbcomsatok6475uogm.apps.googleusercontent.com",
           "client_type": 3
         }
