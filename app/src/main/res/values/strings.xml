@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Pichanga</string>
+    <string name="title_partidos">Partidos</string>
+    <string name="title_favoritos">Favoritos</string>
+    <string name="title_ligas">Ligas</string>
+    <string name="title_perfil">Perfil</string>
 </resources>

@@ -1,7 +1,12 @@
 package com.pichangaexample.pichanga;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.Network;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +14,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+
+import static com.pichangaexample.pichanga.MainActivity.user;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
@@ -49,6 +57,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         //attaching listener to button
         btnRegistrar.setOnClickListener(this);
         btnLogin.setOnClickListener(this);
+
 
     }
 
@@ -136,10 +145,12 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                         if (task.isSuccessful()) {
                             int pos = email.indexOf("@");
                             String user = email.substring(0, pos);
-                            Toast.makeText(Register.this, "Bienvenido: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
+                           // Toast.makeText(Register.this, "Bienvenido: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                             Intent intencion = new Intent(getApplication(), MainActivity.class);
+
                             intencion.putExtra(MainActivity.user, user);
                             startActivity(intencion);
+                            finish();
 
 
                         } else {
@@ -156,14 +167,10 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
     }
 
-
-
-
     @Override
     public void onClick(View view) {
 
         switch (view.getId()) {
-
             case R.id.register_button:
                 //Invocamos al método:
                 registrarUsuario();
@@ -175,4 +182,6 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
 
     }
+
 }
+
