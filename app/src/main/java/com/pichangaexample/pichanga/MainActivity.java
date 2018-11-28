@@ -66,7 +66,5 @@ public class MainActivity extends AppCompatActivity {
 
         viewpager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewpager);*/
-
-
     }
     }
