@@ -9,6 +9,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -110,6 +112,37 @@ public class MainActivity extends AppCompatActivity {
                     new PartidosFragment()).commit();
         }
     }
+
+
+
+
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_bar, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.action_logout:
+                Intent logout = new Intent(this, Register.class);
+                startActivity(logout);
+                break;
+            default:
+                // esto no deberia pasar hehhehehe
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+
+
+
+
 
 
        /* tabLayout = (TabLayout) findViewById(R.id.tablayout_id);

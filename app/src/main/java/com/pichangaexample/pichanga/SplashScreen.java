@@ -15,12 +15,16 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pantalla_inicio);
 
+
+        SharedPreferences prefs = getSharedPreferences("login", MODE_PRIVATE);
+        String correo = prefs.getString("correo", "");
+
         /*SharedPreferences prefs = getSharedPreferences("prefs", MODE_PRIVATE);
         boolean usm = prefs.getBoolean("usm", false);
-        boolean pucv = prefs.getBoolean("pucv", false);
+        boolean pucv = prefs.getBoolean("pucv", false);*/
 
 
-        if (!usm && !pucv){*/
+        if ("".equals(correo)){
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -34,7 +38,7 @@ public class SplashScreen extends AppCompatActivity {
         }, 3000);
     }
 
-        /*else {
+        else {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
@@ -48,7 +52,7 @@ public class SplashScreen extends AppCompatActivity {
         }
 
 
-    }*/
+    }
 
 
 }

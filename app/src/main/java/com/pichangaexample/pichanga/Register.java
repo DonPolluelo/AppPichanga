@@ -59,6 +59,12 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         btnLogin.setOnClickListener(this);
 
 
+        SharedPreferences prefs = getSharedPreferences("login", MODE_PRIVATE);
+        final String correo = prefs.getString("correo", "");
+
+
+
+
     }
 
     private void registrarUsuario(){
@@ -145,6 +151,14 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                         if (task.isSuccessful()) {
                             int pos = email.indexOf("@");
                             String user = email.substring(0, pos);
+
+
+                            SharedPreferences prefs = getSharedPreferences("login", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = prefs.edit();
+                            editor.putString("correo", email);
+                            editor.apply();
+
+
                            // Toast.makeText(Register.this, "Bienvenido: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                             Intent intencion = new Intent(getApplication(), MainActivity.class);
 

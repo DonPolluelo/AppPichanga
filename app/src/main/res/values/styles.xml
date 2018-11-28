@@ -8,4 +8,21 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+
+
+    <!--  Theme de barra superior -->
+
+    <style name="CustomToolbarStyle" parent="Theme.AppCompat">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">#FFFF</item>
+    </style>
+
+    <!--  Theme de popup tres puntos -->
+
+    <style name="CustomPopupStyle" parent="android:Theme.Holo.Light">
+        <item name="android:textColorPrimary">#FFFF</item>
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">-4dp</item>
+    </style>
+
 </resources>
