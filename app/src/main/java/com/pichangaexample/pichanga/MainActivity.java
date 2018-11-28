@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
@@ -42,9 +43,44 @@ public class MainActivity extends AppCompatActivity {
             }
             return false;
         }
-    };
+    };*/
 
-    @Override
+
+
+    private BottomNavigationView.OnNavigationItemSelectedListener navListener =
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    Fragment selectedFragment = null;
+
+                    switch (item.getItemId()) {
+                        case R.id.navigation_partidos:
+                            selectedFragment = new PartidosFragment();
+                            break;
+                        case R.id.navigation_favoritos:
+                            selectedFragment = new FavoritosFragment();
+                            break;
+                        case R.id.navigation_ligas:
+                            selectedFragment = new LigasFragment();
+                            break;
+                        case R.id.navigation_perfil:
+                            selectedFragment = new PerfilFragment();
+                            break;
+                    }
+
+                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                            selectedFragment).commit();
+
+                    return true;
+                }
+            };
+
+
+
+
+
+
+    /*@Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.navigation_main);
@@ -54,7 +90,26 @@ public class MainActivity extends AppCompatActivity {
 
         mTextMessage = (TextView) findViewById(R.id.message);
        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-       navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+       navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);*/
+
+
+
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
+
+        //I added this if statement to keep the selected fragment when rotating the device
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                    new PartidosFragment()).commit();
+        }
+    }
 
 
        /* tabLayout = (TabLayout) findViewById(R.id.tablayout_id);
@@ -66,5 +121,4 @@ public class MainActivity extends AppCompatActivity {
 
         viewpager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewpager);*/
-    }
     }
