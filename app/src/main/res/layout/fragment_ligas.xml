@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -11,4 +12,34 @@
         android:textSize="30sp"
         android:layout_centerInParent="true"/>
 
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_flotante"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp">
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/CrearLiga"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E91E63"
+            android:src="@drawable/ic_ligas"
+            app:fab_label="Agregar Liga"
+            app:fab_size="mini" />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/EditarLiga"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#E91E63"
+            android:src="@drawable/ic_ligas"
+            app:fab_label="Editar Liga"
+            app:fab_size="mini" />
+    </com.github.clans.fab.FloatingActionMenu>
 </RelativeLayout>

@@ -59,11 +59,11 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.navigation_partidos:
                             selectedFragment = new PartidosFragment();
                             break;
-                        case R.id.navigation_favoritos:
-                            selectedFragment = new FavoritosFragment();
-                            break;
                         case R.id.navigation_ligas:
                             selectedFragment = new LigasFragment();
+                            break;
+                        case R.id.navigation_favoritos:
+                            selectedFragment = new FavoritosFragment();
                             break;
                         case R.id.navigation_perfil:
                             selectedFragment = new PerfilFragment();

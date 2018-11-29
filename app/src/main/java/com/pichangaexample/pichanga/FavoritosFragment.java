@@ -16,14 +16,6 @@ public class FavoritosFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_favoritos, container, false);
-        FloatingActionButton fab = (FloatingActionButton) view.findViewById(R.id.floatingButtonCrearLiga);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(getActivity(),CrearLigaActivity.class);
-                startActivity(i);
-           }
-        });
         return view;
     }
 }
