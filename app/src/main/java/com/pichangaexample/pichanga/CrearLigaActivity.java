@@ -1,5 +1,6 @@
 package com.pichangaexample.pichanga;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -71,6 +72,11 @@ public class CrearLigaActivity extends AppCompatActivity {
                     liga.setID(UUID.randomUUID().toString());
                     liga.setListaEquipos(listaEquipo);
                     databaseReference.child("Liga").child(liga.getID()).setValue(liga);
+
+                    Intent intencion = new Intent(getApplication(), MainActivity.class);
+                    startActivity(intencion);
+                    finish();
+
                 } else {
                     Toast.makeText(getApplicationContext(), "Ingrese Nombre",Toast.LENGTH_SHORT).show();
                 }
