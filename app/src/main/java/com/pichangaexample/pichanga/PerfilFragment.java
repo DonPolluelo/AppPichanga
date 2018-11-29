@@ -12,7 +12,8 @@ import android.widget.TextView;
 import static android.content.Context.MODE_PRIVATE;
 
 public class PerfilFragment extends Fragment {
-
+    Integer i;
+    String str="";
     View view;
 
     @Nullable
@@ -23,7 +24,13 @@ public class PerfilFragment extends Fragment {
         SharedPreferences prefs = getActivity().getSharedPreferences("login", MODE_PRIVATE);
         String correo = prefs.getString("correo", "");
 
-        setText("Sesión iniciada como\n" + correo);
+        for(i=0;i<correo.length();i++){
+            if (correo.charAt(i)!='@'){
+                str += correo.charAt(i);
+            }
+            else{break;}
+        }
+        setText(str);
 
         return view;
 

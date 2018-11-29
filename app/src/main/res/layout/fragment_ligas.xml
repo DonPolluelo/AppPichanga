@@ -22,22 +22,23 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        app:menu_colorNormal="#00b8d4"
         android:layout_marginBottom="16dp">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/CrearLiga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#E91E63"
             android:src="@drawable/ic_ligas"
             app:fab_label="Agregar Liga"
+            app:fab_colorNormal="#00b8d4"
             app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/EditarLiga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#E91E63"
+            app:fab_colorNormal="#00b8d4"
             android:src="@drawable/ic_ligas"
             app:fab_label="Editar Liga"
             app:fab_size="mini" />

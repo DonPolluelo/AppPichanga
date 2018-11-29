@@ -24,30 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    /*private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_partidos:
-                    mTextMessage.setText(R.string.title_partidos);
-                    return true;
-                case R.id.navigation_favoritos:
-                    mTextMessage.setText(R.string.title_favoritos);
-                    return true;
-                case R.id.navigation_ligas:
-                    mTextMessage.setText(R.string.title_ligas);
-                    return true;
-                case R.id.navigation_perfil:
-                    mTextMessage.setText(R.string.title_perfil);
-                    return true;
-            }
-            return false;
-        }
-    };*/
-
-
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -102,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);

@@ -1,12 +1,8 @@
 package com.pichangaexample.pichanga;
 
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
-import android.net.Network;
-import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +10,6 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -22,8 +17,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
-
-import static com.pichangaexample.pichanga.MainActivity.user;
 
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
@@ -96,7 +89,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                         //checking if success
                         if(task.isSuccessful()){
 
-                            Toast.makeText(Register.this,"Se ha registrado el usuario con el email: "+ TextEmail.getText(),Toast.LENGTH_LONG).show();
+                            Toast.makeText(Register.this,"Se ha registrado el usuario con éxito",Toast.LENGTH_LONG).show();
                         }else{
                             if (task.getException() instanceof FirebaseAuthUserCollisionException) {//si se presenta una colisión
                                 Toast.makeText(Register.this, "Ese usuario ya existe ", Toast.LENGTH_SHORT).show();
@@ -159,7 +152,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                             editor.apply();
 
 
-                           // Toast.makeText(Register.this, "Bienvenido: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
+                            // Toast.makeText(Register.this, "Bienvenido: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                             Intent intencion = new Intent(getApplication(), MainActivity.class);
 
                             intencion.putExtra(MainActivity.user, user);
