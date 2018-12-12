@@ -18,42 +18,34 @@
 
     <TextView
         android:id="@+id/perfil_textview"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="false"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="185dp"
-        android:gravity="center_horizontal"
         android:text="Perfil Fragment"
-        android:textColor="@color/design_default_color_primary"
-        android:textSize="36sp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="190dp"
-        android:gravity="center_vertical"
-        android:paddingStart="10dp"
-        android:text="Ligas Creadas:"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="30sp" />
+        android:text="Ligas Creadas por el Usuario:"
+        android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView8"
-        android:layout_width="match_parent"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="10dp"
-        android:layout_marginBottom="100dp"
-        android:gravity="center_vertical"
-        android:paddingStart="10dp"
-        android:text="Ligas Seguidas:"
-        android:textColor="@color/common_google_signin_btn_text_dark_focused"
-        android:textSize="30sp" />
+        android:layout_marginBottom="150dp"
+        android:text="Ligas Seguidas por el Usuario:"
+        android:textSize="18sp" />
 
 </RelativeLayout>

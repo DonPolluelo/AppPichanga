@@ -12,18 +12,7 @@
         android:gravity="top"
         android:inputType="text"
         android:orientation="horizontal"
-        android:queryHint="Búsqueda" >
-
-    </SearchView>
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:gravity="center_vertical|center_horizontal"
-        android:text="Las ligas que sigas aparecerán en este apartado"
-        android:textSize="36sp" />
+        android:queryHint="Búsqueda" />
 
 
 </RelativeLayout>
