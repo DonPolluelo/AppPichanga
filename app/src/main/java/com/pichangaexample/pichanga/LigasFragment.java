@@ -1,15 +1,23 @@
 package com.pichangaexample.pichanga;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.github.clans.fab.FloatingActionMenu;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class LigasFragment extends Fragment {
     FloatingActionMenu actionMenu;
@@ -50,6 +58,13 @@ public class LigasFragment extends Fragment {
                 startActivity(i);
             }
         });*/
+
+        SharedPreferences prefs = getActivity().getSharedPreferences("login", MODE_PRIVATE);
+        final String correo = prefs.getString("correo", "");
+        Query query = FirebaseDatabase.getInstance().getReference("Liga")
+                .orderByChild("idCreador")
+                .equalTo(correo);
+        Log.i("Liga Fragment",query.toString());
         return view;
     }
 }
