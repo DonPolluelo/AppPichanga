@@ -5,13 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Liga Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="Tus ligas creadas aparecerán en este apartado"
+        android:textSize="36sp" />
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menu_flotante"
@@ -22,7 +23,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:menu_colorNormal="#00b8d4"
+        app:menu_colorNormal="@color/colorAccent"
         android:layout_marginBottom="16dp">
 
         <com.github.clans.fab.FloatingActionButton
@@ -31,14 +32,14 @@
             android:layout_height="match_parent"
             android:src="@drawable/ic_ligas"
             app:fab_label="Agregar Liga"
-            app:fab_colorNormal="#00b8d4"
+            app:fab_colorNormal="@color/colorAccent"
             app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/EditarLiga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:fab_colorNormal="#00b8d4"
+            app:fab_colorNormal="@color/colorAccent"
             android:src="@drawable/ic_ligas"
             app:fab_label="Editar Liga"
             app:fab_size="mini" />
