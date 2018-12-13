@@ -66,16 +66,20 @@ public class CrearLigaActivity extends AppCompatActivity {
                 EditText nombre = (EditText) findViewById(R.id.NombreLiga);
                 String n = nombre.getText().toString();
                 if (!n.equals("")){
-                    Liga liga = new Liga();
-                    liga.setNombre(n);
-                    liga.setIdCreador(correo);
-                    liga.setID(UUID.randomUUID().toString());
-                    liga.setListaEquipos(listaEquipo);
-                    databaseReference.child("Liga").child(liga.getID()).setValue(liga);
+                    if(listaEquipo.size()!=0){
+                        Liga liga = new Liga();
+                        liga.setNombre(n);
+                        liga.setIdCreador(correo);
+                        liga.setID(UUID.randomUUID().toString());
+                        liga.setListaEquipos(listaEquipo);
+                        databaseReference.child("Liga").child(liga.getID()).setValue(liga);
 
-                    Intent intencion = new Intent(getApplication(), MainActivity.class);
-                    startActivity(intencion);
-                    finish();
+                        Intent intencion = new Intent(getApplication(), MainActivity.class);
+                        startActivity(intencion);
+                        finish();
+                    } else
+                            {
+                                Toast.makeText(getApplicationContext(), "Ingrese Equipos",Toast.LENGTH_SHORT).show();}
 
                 } else {
                     Toast.makeText(getApplicationContext(), "Ingrese Nombre",Toast.LENGTH_SHORT).show();
