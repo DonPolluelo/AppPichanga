@@ -59,8 +59,8 @@ public class PerfilFragment extends Fragment {
                 }
 
                 listSize = list.size();
-                t=(TextView) getActivity().findViewById(R.id.textView3);
-                t.setText("Ligas Creadas por el Usuario: " + String.valueOf(listSize));
+                t=(TextView) getActivity().findViewById(R.id.textView4);
+                t.setText(String.valueOf(listSize));
 
 
             }

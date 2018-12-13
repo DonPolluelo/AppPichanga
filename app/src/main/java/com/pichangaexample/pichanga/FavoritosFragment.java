@@ -1,6 +1,7 @@
 package com.pichangaexample.pichanga;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -21,6 +22,8 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public class FavoritosFragment extends Fragment {
 
     @Nullable
@@ -28,6 +31,8 @@ public class FavoritosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_favoritos, container, false);
 
+        SharedPreferences prefs = getActivity().getSharedPreferences("login", MODE_PRIVATE);
+        final String correo = prefs.getString("correo", "");
 
 
 
@@ -40,7 +45,11 @@ public class FavoritosFragment extends Fragment {
                 List<String> list = new ArrayList<>();
                 for(DataSnapshot ds : dataSnapshot.getChildren()) {
                     String nombre = ds.child("nombre").getValue(String.class);
-                    list.add(nombre);
+                    String creador = ds.child("idCreador").getValue(String.class);
+
+                    if(correo.equals(creador)==false) {
+                        list.add(nombre);
+                    }
 
                 }
                 ListView listView = (ListView) getActivity().findViewById(R.id.ligas_listview);

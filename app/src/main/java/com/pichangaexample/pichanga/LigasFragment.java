@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionMenu;
 import com.google.firebase.FirebaseApp;
@@ -96,9 +97,9 @@ public class LigasFragment extends Fragment {
         button1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                //    Toast.makeText(getActivity(),"Agregar Semestre",Toast.LENGTH_SHORT).show();
-                Intent i = new Intent(getActivity(),CrearLigaActivity.class);
-                startActivity(i);
+                Toast.makeText(getActivity(),"Editar Liga aún no está disponible",Toast.LENGTH_SHORT).show();
+               // Intent i = new Intent(getActivity(),CrearLigaActivity.class);
+               // startActivity(i);
             }
         });
         button2.setOnClickListener(new View.OnClickListener(){
