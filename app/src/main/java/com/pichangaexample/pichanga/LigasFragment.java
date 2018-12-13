@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -30,6 +31,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class LigasFragment extends Fragment {
     FloatingActionMenu actionMenu;
     FloatingActionButton button1,button2;
+    private ListView listView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -56,8 +58,17 @@ public class LigasFragment extends Fragment {
 
 
                 }
-                ListView listView = (ListView) getActivity().findViewById(R.id.mis_ligas_listview);
+                listView = (ListView) getActivity().findViewById(R.id.mis_ligas_listview);
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
+                listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(getContext(), TablaActivity.class);
+                        intent.putExtra("nombre", listView.getItemAtPosition(position).toString());
+                        startActivity(intent);
+                    }
+                });
+
                 listView.setAdapter(arrayAdapter);
             }
 
