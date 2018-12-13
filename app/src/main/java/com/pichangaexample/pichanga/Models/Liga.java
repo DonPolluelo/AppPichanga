@@ -9,33 +9,47 @@ public class Liga {
     private ArrayList<Equipo> listaEquipos;
     private ArrayList<Partido> listaPartidos;
 
+
     public Liga(){
         listaEquipos = new ArrayList<>();
         listaPartidos = new ArrayList<>();
+    }
+
+    //get methods
+
+    public String getID() {
+        return ID;
+    }
+
+    public String getIdCreador() {
+        return idCreador;
     }
 
     public String getNombre() {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public ArrayList<Equipo> getListaEquipos() {
         return listaEquipos;
-    }
-
-    public void setIdCreador(String idCreador) {
-        this.idCreador = idCreador;
     }
 
     public ArrayList<Partido> getListaPartidos() {
         return listaPartidos;
     }
 
-    public String getIdCreador() {
-        return idCreador;
+
+    //set methods
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public void setIdCreador(String idCreador) {
+        this.idCreador = idCreador;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public void setListaEquipos(ArrayList<Equipo> listaEquipos) {
@@ -46,11 +60,4 @@ public class Liga {
         this.listaPartidos = listaPartidos;
     }
 
-    public String getID() {
-        return ID;
-    }
-
-    public void setID(String ID) {
-        this.ID = ID;
-    }
 }
