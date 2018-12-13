@@ -60,7 +60,7 @@ public class LigasFragment extends Fragment {
 
                 }
                 listView = (ListView) getActivity().findViewById(R.id.mis_ligas_listview);
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), R.layout.text_listview, R.id.text_list, list);
                 listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {

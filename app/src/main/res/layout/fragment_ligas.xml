@@ -31,29 +31,28 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:menu_colorNormal="@color/colorAccent"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="16dp"
+        app:menu_buttonToggleAnimation="@anim/fab_slide_in_from_right"
+        app:menu_colorNormal="@color/colorAccent">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/CrearLiga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:src="@drawable/ic_ligas"
-            app:fab_label="Agregar Liga"
             app:fab_colorNormal="@color/colorAccent"
+            app:fab_label="Agregar Liga"
             app:fab_size="mini" />
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/EditarLiga"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:fab_colorNormal="@color/colorAccent"
             android:src="@drawable/ic_ligas"
+            app:fab_colorNormal="@color/colorAccent"
             app:fab_label="Editar Liga"
             app:fab_size="mini" />
     </com.github.clans.fab.FloatingActionMenu>
-
-
 
 
 </RelativeLayout>

@@ -53,7 +53,7 @@ public class FavoritosFragment extends Fragment {
 
                 }
                 ListView listView = (ListView) getActivity().findViewById(R.id.ligas_listview);
-                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, list);
+                ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(getActivity(), R.layout.text_listview, R.id.text_list,list);
                 listView.setAdapter(arrayAdapter);
             }
 
